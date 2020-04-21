@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: HappyMorning_production
-  username: HappyMorning
-  password: <%= ENV['HAPPYMORNING_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
