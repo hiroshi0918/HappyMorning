@@ -1,0 +1,48 @@
+.card-register{
+  .card{
+    width: 600px;
+    margin: 0 auto;
+    padding: 20px 0;
+    .title{
+      text-align: center;
+      font-size: 25px;
+      font-weight: bold;
+      padding-bottom: 20px;
+      border-bottom:1px solid #EEE;
+      box-shadow:rgba(122, 122, 122, 0.0588235) 0px 6px 6px -6px;
+      -webkit-box-shadow:rgba(122, 122, 122, 0.0588235) 0px 6px 6px -6px;
+      -moz-box-shadow:rgba(122, 122, 122, 0.0588235) 0px 6px 6px -6px;
+    }
+    #charge-form{
+      padding: 50px;
+      label{
+        font-weight: bold;
+      }
+      .number{
+        margin-bottom: 40px;
+        #card_number{
+          display: block;
+          width: 300px;
+          height: 40px;
+        }
+    }
+      .exp{
+        margin-bottom: 40px;
+      }
+      .security{
+        margin-bottom: 40px;
+        #cvc{
+          width: 200px;
+          height: 40px;
+        }
+     }
+     #token_submit{
+       width: 250px;
+       height: 40px;
+       background-color: red;
+       color: white;
+     }
+
+  }
+}
+}

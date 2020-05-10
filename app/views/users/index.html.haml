@@ -1,0 +1,14 @@
+.SignPage
+  .fmarket__logo.center
+  .NewMemberRegistration
+    .NewMemberRegistration__header
+      新規会員登録
+    .NewMemberRegistration__box
+      = link_to new_user_registration_path, class: "NewMemberRegistration__box--btn btn--email" do
+        %i.far.fa-envelope
+        メールアドレスで登録する
+      = link_to user_twitter_omniauth_authorize_path, method: :post, class: "NewMemberRegistration__box--btn btn--twitter" do
+        %i.fab.fa-twitter-square
+        Twitterで登録する
+      -# = link_to user_google_oauth2_omniauth_authorize_path, method: :post, class: "NewMemberRegistration__box--btn btn--gAccount" do
+      -#   Googleで登録する

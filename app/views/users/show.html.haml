@@ -1,0 +1,19 @@
+.container
+  .row
+    .user.col-md-12
+      = link_to edit_user_registration_path do
+        .user__edit
+          プロフィール変更
+      = link_to "/order_items" do
+        .usre__order
+          注文履歴
+      = link_to cards_path do
+        .user__cart
+          カード情報
+      = link_to user_registration_path, method: :delete do
+        .user__quit
+          ユーザー退会
+      = link_to  destroy_user_session_path, method: :delete do
+        .user_logout
+          ログアウト
+        
