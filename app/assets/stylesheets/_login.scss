@@ -1,0 +1,56 @@
+.login-page{
+  background-color: white;
+  margin: 0 auto;
+  width: 700px;
+  &__title{
+    text-align: center;
+    padding: 30px 0;
+    border-bottom:1px solid #EEE;
+    box-shadow:rgba(122, 122, 122, 0.0588235) 0px 6px 6px -6px;
+    -webkit-box-shadow:rgba(122, 122, 122, 0.0588235) 0px 6px 6px -6px;
+    -moz-box-shadow:rgba(122, 122, 122, 0.0588235) 0px 6px 6px -6px;
+    font-size: 35px;
+    font-weight: bold;
+
+  }
+  .login-form{
+    width: 300px;
+    margin: 50px auto;
+    padding-bottom: 50px;
+    
+    label{
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+  }
+  .email{
+    margin: 30px 0;
+    input{
+      width: 300px;
+      height: 50px;
+    }
+
+  }
+  .password{
+    input{
+      width: 300px;
+      height: 50px;
+    }
+  }
+  .remember{
+    margin: 30px 0;
+  }
+  .actions{
+    .submit-btn{
+      width: 300px;
+      height: 50px;
+      background-color: red;
+      color: white;
+    }}
+  .notification{
+    text-align: center;
+    margin: 30px 0;
+  }
+  
+}

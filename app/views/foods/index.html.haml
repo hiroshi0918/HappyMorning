@@ -1,0 +1,43 @@
+.top
+  .top__title
+    = "#{@shop.name}の商品一覧"
+.wrapper.container
+  -if user_signed_in?
+    .row
+      - @foods.each do |food|
+        = form_with(model: @user_item,local: true, url: "/users/#{current_user.id}/user_items",class: "send-cart col-xs-6 col-md-3") do |form|
+          .food
+            .food__image
+              = image_tag "/foods/#{food.image}", alt: 'パン',class:"food__image__photo"
+              .food__image__price
+                = food.price
+                %span 円
+            .food__name
+              = food.name
+            .food__counting.col-xs-3
+              .btn.rounded-circle.p-0.minus
+                −
+              = form.number_field :quantity,name: "quantity", type: "number",class: "count"
+              .btn.rounded-circle.p-0.plus
+                ＋
+            = form.hidden_field :food_id, :value => food.id
+            = form.submit "カートに追加", class: "btn submit-btn"
+    = link_to "/users/#{current_user.id}/user_items",class: "move-to-cart" do
+      .move-to-cart__name
+        cart
+      %i.fas.fa-shopping-cart.fa-4x
+  - else
+    .row
+      - @foods.each do |food|
+        .send-cart.col-xs-6.col-md-3
+          .food
+            .food__image
+              = image_tag "/foods/#{food.image}", alt: 'パン',class:"food__image__photo"
+              .food__image__price
+                = food.price
+                %span 円
+            .food__name
+              = food.name
+    = link_to '新規登録', users_path
+    = link_to 'ログインして買い物を続ける', new_user_session_path
+        

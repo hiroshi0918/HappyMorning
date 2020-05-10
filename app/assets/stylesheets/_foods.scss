@@ -1,0 +1,99 @@
+.send-cart{
+  margin-bottom: 20px;
+  .food{
+    background-color: rgb(245,245,245);
+    text-align: center;
+    border: 1px solid transparent;
+    box-shadow: 5px 5px rgba(0,0,0,0.05);;
+    &__image{
+      position: relative;
+      &__photo{
+        width: 100%;
+        height: 200px;
+
+      }
+      &__price{
+        position: absolute;
+        bottom: 5px;
+        right: 5px;
+        background-color: rgba( 255, 255, 240, 0.9 );
+        border-radius: 50%;
+        padding: 7px;
+        font-size: 20px;
+        border: double;
+        span{
+          font-size: 10px;
+        }
+      }
+    }
+    &__counting{
+      .minus{
+        width: 35px;
+        height: 35px;
+        line-height: 26px;
+        font-size: 30px;
+        background-color: lightcoral;
+        color: white;
+      }
+      .plus{
+        width: 35px;
+        height: 35px;
+        line-height: 32px;
+        font-size: 25px;
+        background-color: lightcoral;
+        color: white;
+      }
+      #quantity{
+        width: 50px;
+      }
+    }
+    &__name{
+      font-size: 26px;
+      font-weight: 300;
+      border-bottom: dashed 1px;
+      margin-bottom: 20px;
+    }
+    .submit-btn{
+      position: relative;
+      background-color: #FFA07A;
+      border-radius: 4px;
+      color: #fff;
+      line-height: 30px;
+      -webkit-transition: none;
+      transition: none;
+      box-shadow: 0 3px 0 #FA8072;
+      text-shadow: 0 1px 1px rgba(0, 0, 0, .4);
+      margin: 15px 0 15px 0;
+    }
+    .sumbit-btn:hover {
+      top: -4px;
+      box-shadow: 0 7px 0 #f7ba59;
+    }
+    .submit-btn:active {
+      top: 3px;
+      box-shadow: none;
+    }
+
+  }
+}
+
+.move-to-cart{
+  width: 150px;
+	height: 150px;
+  border-radius: 50%;
+  display: block;
+  background-color: rgb(255,90,150);
+  position:fixed;
+  right:50px;
+  bottom:50px;
+  text-align: center;
+  &__name{
+    color: rgb(245,245,245);
+    padding-top: 25px;
+  }
+  .fas{
+    color: rgb(245,245,245);
+    padding-right: 5px;
+    
+  }
+}

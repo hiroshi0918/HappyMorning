@@ -1,0 +1,8 @@
+%h2 購入が完了しました！
+- @user_items.each do |item|
+  %p
+    = item.food.name
+  %p
+    = item.quantity
+    個
+= link_to 'トップページへ戻る', root_path
