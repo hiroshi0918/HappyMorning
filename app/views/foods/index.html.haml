@@ -5,7 +5,7 @@
   -if user_signed_in?
     .row
       - @foods.each do |food|
-        = form_with(model: @user_item,local: true, url: "/users/#{current_user.id}/user_items",class: "send-cart col-md-6 col-sm-6 col-lg-3") do |form|
+        = form_with(model: @user_item,local: true, url: "/users/#{current_user.id}/user_items",class: "send-cart col-md-6 col-sm-6 col-lg-3 ") do |form|
           .food
             .food__image
               = image_tag "/foods/#{food.image}", alt: 'パン',class:"food__image__photo"
@@ -14,7 +14,7 @@
                 %span 円
             .food__name
               = food.name
-            .food__counting.col-xs-3
+            .food__counting
               .btn.rounded-circle.p-0.minus
                 −
               = form.number_field :quantity,name: "quantity", type: "number",class: "count"
@@ -29,7 +29,7 @@
   - else
     .row
       - @foods.each do |food|
-        .send-cart.col-xs-6.col-md-3
+        .send-cart.col-md-6.col-sm-6.col-lg-3
           .food
             .food__image
               = image_tag "/foods/#{food.image}", alt: 'パン',class:"food__image__photo"
