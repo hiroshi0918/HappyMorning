@@ -51,12 +51,30 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'letter_opener'
 end
-
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :production do
   gem 'unicorn', '5.4.1'
 end
+
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'kaminari'
+gem 'cancancan'
+gem 'pry-rails'
+gem  'devise'
+gem 'activeadmin'
+gem 'bootstrap', '~> 4.1.1'
+gem 'jquery-rails'
+gem 'omniauth-twitter'
+gem 'haml-rails'
+gem 'config'
+gem 'rails-i18n', '~> 5.1'
+gem 'devise-i18n-views'
+gem 'payjp'
+gem 'font-awesome-sass', '~> 5.4.1'
+gem 'cancancan'
+gem 'rails_admin'
+gem 'turbolinks'

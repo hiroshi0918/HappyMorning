@@ -1,0 +1,72 @@
+.signup-form{
+  background-color: white;
+  width: 700px;
+  margin: 80px auto;
+  padding: 30px 0 30px 0;
+  h2{
+    text-align: center;
+    font-weight: bold;
+    border-bottom:1px solid #EEE;
+    box-shadow:rgba(122, 122, 122, 0.0588235) 0px 6px 6px -6px;
+    -webkit-box-shadow:rgba(122, 122, 122, 0.0588235) 0px 6px 6px -6px;
+    -moz-box-shadow:rgba(122, 122, 122, 0.0588235) 0px 6px 6px -6px;
+    padding-bottom: 30px;
+  }
+  label{
+    font-size: 18px;
+    font-weight: bold;
+  }
+  &__box{
+    &__contents{
+      margin: 0 auto;
+      width: 300px;
+      input{
+        width: 300px;
+        height: 50px;
+      }
+    
+      .name{
+        margin: 50px 0;
+        &__lastname{
+        }
+        &__firstname{
+          margin-top: 15px;
+        }
+      }
+      .address{
+        margin-bottom: 50px;
+        &__second{
+          margin-top: 15px;
+        }
+
+    }
+      .email{
+        margin-bottom: 50px;
+      }
+      .telephone{
+        margin-bottom: 50px;
+      }
+      .password{
+        margin-bottom: 50px;
+        &__confirm{
+          margin-top: 15px;
+        }
+      }
+  }
+    .actions{
+      margin: 0 auto;
+      width: 300px;
+      .submit-btn{
+        width: 300px;
+        height: 50px;
+        background-color: red;
+        color: white;
+        display: block;
+      }
+    }
+    .notification{
+      text-align: center;
+      margin: 30px 0;
+    }
+
+}}

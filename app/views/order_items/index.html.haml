@@ -1,0 +1,33 @@
+.order-item.container
+  %p 注文履歴一覧
+  .orders.row
+    - @order_items.each do |order|
+      .order.col-md-12
+        .order__date
+          %span 注文日時
+          %span
+            = order.strftime("%Y年%-m月%-d日 %-H時%-M分")
+        .order__items
+          .title
+            %p 購入商品
+          .order__items__detail
+            - OrderItem.where(created_at: order).each do |o|
+              .information
+                .information__left
+                  .information__left__image
+                    = image_tag "/foods/#{o.food.image}", alt: 'ショップ', width: "100px",height: "100px"
+                  .information__left__name
+                    = o.food.name
+                .information__right
+                  .information__right__price
+                    %span.price
+                      = o.food.price
+                    %span 円
+                    %span.quantity
+                      = o.quantity
+                    %span 個
+        .order__total
+          %span 合計
+          = OrderItem.where(created_at: order).sum(:price)
+          %span 円
+        

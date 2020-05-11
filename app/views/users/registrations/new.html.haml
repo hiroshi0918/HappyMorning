@@ -1,0 +1,54 @@
+.signup-form
+  %h2 新規登録
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = render "devise/shared/error_messages", resource: resource
+    .signup-form__box
+      .signup-form__box__contents
+        .name
+          .name__lastname
+            .field
+              = f.label :last_name do
+                苗字
+              = f.text_field :last_name, autofocus: true, placeholder: "例) 田中", autocomplete: "last_name"
+          .name__firstname
+            .field
+              = f.label :first_name do
+                名前
+              = f.text_field :first_name, placeholder: "例) 太郎", autocomplete: "first_name"
+        .address
+          .field
+            = f.label :first_address do
+              住所(都道府県)
+            = f.text_field :first_address,placeholder: "例) 東京都", autocomplete: "first_address"
+          .address__second
+            .field
+              = f.label :second_address do
+                住所(市区町村以下)
+              = f.text_field :second_address,placeholder: "例) 港区麻布十番1ー〇ー〇 マンション〇〇〇号室", autocomplete: "second_address"
+        .email
+          .field
+            = f.label :email do
+              Eメール
+            = f.email_field :email,placeholder: "例) happymorning@gmail.com", autocomplete: "email"
+        .telephone
+          .field
+            = f.label :telephone do
+              電話番号
+            = f.text_field :telephone,placeholder: "例) 080-1111ー〇〇〇〇", autocomplete: "email"
+        .password
+          .field
+            = f.label :password do
+              パスワード
+            - if @minimum_password_length
+              %em
+                (#{@minimum_password_length} 文字以上)
+            = f.password_field :password,placeholder: "6文字以上", autocomplete: "new-password"
+          .password__confirm 
+            .field
+              = f.label :password_confirmation do
+                確認用パスワード
+              = f.password_field :password_confirmation,placeholder: "確認のためもう一度パスワードを入力してください", autocomplete: "new-password"
+      .actions
+        = f.submit "新規登録",class: "submit-btn"
+      .notification
+        = render "devise/shared/links"

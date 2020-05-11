@@ -1,0 +1,22 @@
+.top
+  .top__title
+    店舗一覧
+.wrapper.contents
+  .shops.row
+    - @shops.each do |shop|
+      = link_to "/shops/#{shop.id}/foods",class: "shops__list col-md-4 col-xs-1 " do
+        .shops__list__select
+          .shops__list__select__image
+            = image_tag "/shops/#{shop.image}", alt: 'ショップ',class: "shops__list__select__image__pic"
+          .shop_header
+            = shop.name
+          .shop_details
+            .shop_details_address
+              = shop.address
+            .shop_details_telephone
+              = shop.telephone
+  -if user_signed_in?
+    = link_to "/users/#{current_user.id}/user_items",class: "move-to-cart" do
+      .move-to-cart__name
+        cart
+      %i.fas.fa-shopping-cart.fa-4x
