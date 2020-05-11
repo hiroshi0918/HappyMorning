@@ -9,11 +9,16 @@
           .shops__list__select__image
             = image_tag "/shops/#{shop.image}", alt: 'ショップ',class: "shops__list__select__image__pic"
           .shop_header
-            = shop.name
+            %span
+              = shop.name
           .shop_details
             .shop_details_address
+              %span
+                住所：
               = shop.address
             .shop_details_telephone
+              %span
+                電話番号：
               = shop.telephone
   -if user_signed_in?
     = link_to "/users/#{current_user.id}/user_items",class: "move-to-cart" do

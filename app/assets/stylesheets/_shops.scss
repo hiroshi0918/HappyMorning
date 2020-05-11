@@ -20,16 +20,19 @@
       
       &__select{
         background-color: rgb(245,245,245);
-        text-align: center;
         border: 1px solid transparent;
         box-shadow: 5px 5px rgba(0,0,0,0.05);
 
         &__image{
-
           &__pic{
             width: 100%;
             height: 300px;
           }
+        }
+        .shop_header{
+          font-size: 30px;
+          text-align: center;
+          margin: 20px 0;
         }
       }
     }
