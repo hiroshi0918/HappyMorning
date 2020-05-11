@@ -4,7 +4,7 @@
 .wrapper.contents
   .shops.row
     - @shops.each do |shop|
-      = link_to "/shops/#{shop.id}/foods",class: "shops__list col-md-4 col-xs-1 " do
+      = link_to "/shops/#{shop.id}/foods",class: "shops__list col-md-4 col-xs-1 col-sm-1" do
         .shops__list__select
           .shops__list__select__image
             = image_tag "/shops/#{shop.image}", alt: 'ショップ',class: "shops__list__select__image__pic"

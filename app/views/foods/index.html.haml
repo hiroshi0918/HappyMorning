@@ -5,7 +5,7 @@
   -if user_signed_in?
     .row
       - @foods.each do |food|
-        = form_with(model: @user_item,local: true, url: "/users/#{current_user.id}/user_items",class: "send-cart col-xs-6 col-md-3") do |form|
+        = form_with(model: @user_item,local: true, url: "/users/#{current_user.id}/user_items",class: "send-cart col-xs-6 col-sm-6 col-md-3") do |form|
           .food
             .food__image
               = image_tag "/foods/#{food.image}", alt: 'パン',class:"food__image__photo"
