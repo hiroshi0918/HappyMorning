@@ -21,7 +21,7 @@ class OrderItemsController < ApplicationController
 
   def pay
     card = Card.where(user_id: current_user.id).first
-    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+    Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_PRIVATE_KEY]
     Payjp::Charge.create(
       amount: @total_price, # 決済する値段
       customer: card.customer_id, # フォームを送信すると生成されるトークン
