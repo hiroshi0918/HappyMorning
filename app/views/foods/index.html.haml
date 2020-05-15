@@ -38,6 +38,6 @@
                 %span 円
             .food__name
               = food.name
-    = link_to '新規登録', users_path
-    = link_to 'ログインして買い物を続ける', new_user_session_path
+    = link_to 'ログインして買い物を続ける', new_user_session_path,class:"food-login"
+    = link_to 'アカウントが無い方はこちら', users_path,class:"food-signup"
         
