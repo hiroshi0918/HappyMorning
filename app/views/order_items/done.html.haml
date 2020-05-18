@@ -1,8 +1,7 @@
-%h2 購入が完了しました！
-- @user_items.each do |item|
-  %p
-    = item.food.name
-  %p
-    = item.quantity
-    個
-= link_to 'トップページへ戻る', root_path
+.done
+  .done__purchase
+    %h2 購入が完了しました！
+  .done__link
+    = link_to '注文の確認',order_items_path, class:"done__link__orders"
+    = link_to '店舗一覧へ戻る', root_path, class:"done__link__shop"
+    

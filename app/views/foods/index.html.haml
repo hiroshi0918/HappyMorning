@@ -5,7 +5,7 @@
   -if user_signed_in?
     .row
       - @foods.each do |food|
-        = form_with(model: @user_item,local: true, url: "/users/#{current_user.id}/user_items",class: "send-cart col-md-6 col-sm-6 col-lg-3 ") do |form|
+        = form_with(model: @user_item,local: true, url: "/users/#{current_user.id}/user_items",class: "send-cart col-md-6 col-sm-6 col-lg-3 ",data: {btn: "#{food.id}"}) do |form|
           .food
             .food__image
               = image_tag "/foods/#{food.image}", alt: 'パン',class:"food__image__photo"
@@ -17,12 +17,16 @@
             .food__counting
               .btn.rounded-circle.p-0.minus
                 −
-              = form.number_field :quantity,name: "quantity", type: "number",class: "count"
+              = form.number_field :quantity,name: "quantity", type: "number",class: "count","data-index": "#{food.id}"
               .btn.rounded-circle.p-0.plus
                 ＋
             = form.hidden_field :food_id, :value => food.id
             = form.submit "カートに追加", class: "btn submit-btn"
+    = paginate @foods
     = link_to "/users/#{current_user.id}/user_items",class: "move-to-cart" do
+      .move-to-cart__amount
+        .move-to-cart__amount__number
+          = @user_items_amount
       .move-to-cart__name
         cart
       %i.fas.fa-shopping-cart.fa-4x

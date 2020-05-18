@@ -1,0 +1,30 @@
+.top-page
+  .top-page__header
+    %h4
+      = link_to "BreadStart", "/",class:"title"
+  .top-page__guide
+    - if user_signed_in? && current_user.try(:admin?)
+      = link_to "管理画面", "/admin",class: "admin"
+    - if user_signed_in?
+      = link_to "会員情報", "/users/#{current_user.id}",class:"user-information"
+    - else
+      = link_to 'ログイン', new_user_session_path,class:"login"
+      = link_to 'アカウント作成', users_path,class:"signup"
+  .top-images#slide
+    %ul
+      %li
+        = image_tag "/top/朝食トップ画像.jpg",class:"top-images__image"
+      %li
+        = image_tag "/top/朝食トップ画像２.jpg",class:"top-images__image"
+      %li
+        = image_tag "/top/朝食トップ画像３.jpg",class:"top-images__image"
+      %li
+        = image_tag "/top/パン食べ画像.jpg",class:"top-images__image"
+  .sub
+    朝食デリバリーサービス
+  .sub2
+    あなたの朝をちょっと贅沢に!
+  .shops
+    = link_to "店舗一覧を見る", shops_path,class:"shops__btn"
+  
+    

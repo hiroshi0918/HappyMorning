@@ -1,12 +1,13 @@
 .order-item.container
-  %p 注文履歴一覧
+  .order-item__title
+    注文履歴一覧
   .orders.row
     - @order_items.each do |order|
       .order.col-md-12
         .order__date
           %span 注文日時
           %span
-            = order.strftime("%Y年%-m月%-d日 %-H時%-M分")
+            = order.strftime("%Y年%-m月%-d日")
         .order__items
           .title
             %p 購入商品
@@ -19,10 +20,12 @@
                   .information__left__name
                     = o.food.name
                 .information__right
+                  .information__right__shop
+                    =link_to "#{o.food.shop.name}","/shops/#{o.food.shop.id}/foods"
                   .information__right__price
                     %span.price
                       = o.food.price
-                    %span 円
+                    %span 円/
                     %span.quantity
                       = o.quantity
                     %span 個

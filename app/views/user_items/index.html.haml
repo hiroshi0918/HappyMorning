@@ -12,20 +12,22 @@
             = image_tag "/foods/#{item.food.image}",class: "foods__selected__image"
             .foods__selected__detail
               = form_with(model: item,url: "/users/#{current_user.id}/user_items/#{item.id}",class:"foods__selected__detail__form",local: true) do |form|
+                .foods__selected__detail__form__name
+                  = item.food.name
                 .foods__selected__detail__form__calculate
                   %strong.foods__selected__detail__form__calculate__price
                     = item.food.price
-                  %strong.foods__selected__detail__form__calculate__yen 円
-                  %strong.foods__selected__detail__form__calculate__multiple ×
+                  .foods__selected__detail__form__calculate__yen 円
+                  %strong.foods__selected__detail__form__calculate__multiple /
                   = form.number_field :quantity,name: "quantity", type: "number",value: "#{item.quantity}",class: "foods__selected__detail__form__calculate__quantity"
-                  %strong 個
-                = form.submit "数量変更の確定", class: "btn btn-secondary submit-btn foods__selected__detail__form__change"
+                  .foods__selected__detail__form__calculate__yen 個
                 .foods__selected__detail__form__sum
                   %strong =
                   %strong
                     = item.food.price * item.quantity
                   %strong
                     円
+                = form.submit "数量変更", class: "btn btn-outline-primary submit-btn foods__selected__detail__form__change"
                 = link_to "/users/#{current_user.id}/user_items/#{item.id}", method: :delete,class: "foods__selected__detail__form__delete" do
                   %i.fas.fa-trash-alt.fa-1.5x
                  
@@ -33,9 +35,10 @@
       .amount.col-md-12
         .amount__sum
           %strong 合計
-          %strong
-            = @amount
-          %strong 円
+          .amount__sum__number
+            %strong
+              = @amount
+            %strong 円
  
     %br
     .pay-card
@@ -44,10 +47,14 @@
         %br /
       - else
         -#以下カード情報を表示
-        = "**** **** **** " + @default_card_information.last4
-        - exp_month = @default_card_information.exp_month.to_s
-        - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
-        = exp_month + " / " + exp_year
+        .pay-card__number
+          %span 末尾４桁：
+          = "**** **** **** " + @default_card_information.last4
+        .pay-card__exp
+          %span 有効期限：
+          - exp_month = @default_card_information.exp_month.to_s
+          - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+          = exp_month + " / " + exp_year
     %br
     = form_with(model:@order_item ,local: true) do |f|
       .purchase-body
@@ -68,15 +75,15 @@
             .purchase-body__delivery__name__stick
               様
       .delivery-time
-        %h3 希望の配達時間を選択してください(6時から10時)
+        %h3 希望の配達日、時間を選択してください(6時〜10時)
         = f.date_select :order_date, {default: Date.today + 1.day, discard_year: true}, class: "time-box"
         = f.select :order_time_zone, ['6:00~6:30','6:30~7:00','7:00~7:30','7:30~8:00','8:00~8:30', '8:30~9:00', '9:00~9:30','9:30~10:00'], {}, class: 'sample'
         %br
       .confirmation
-        %h2 予約を確定しますか？
+        %h2 上記の内容でよろしいですか？
         - @user_items.each do |i|
           = fields_for 'order_items[]', i do |field|
             = field.hidden_field :quantity, value: i.quantity
             = field.hidden_field :price, value: i.food.price * i.quantity
             = field.hidden_field :food_id, value: i.food.id
-        %button 予約を完了する！
+        %button 内容を確認したので予約を確定する！

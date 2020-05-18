@@ -53,10 +53,15 @@
       }
     }
     &__name{
-      font-size: 26px;
+      font-size: 23px;
       font-weight: bold;
-      border-bottom: dashed 1px;
+      border-bottom:1px solid #EEE;
+      box-shadow:rgba(122, 122, 122, 0.0588235) 0px 6px 6px -6px;
+      -webkit-box-shadow:rgba(122, 122, 122, 0.0588235) 0px 6px 6px -6px;
+      -moz-box-shadow:rgba(122, 122, 122, 0.0588235) 0px 6px 6px -6px;
       margin-bottom: 20px;
+      white-space: nowrap;
+      overflow: scroll;
     }
     .submit-btn{
       position: relative;
@@ -92,6 +97,21 @@
   right:50px;
   bottom:50px;
   text-align: center;
+  &__amount{
+    position:fixed;
+    right:35px;
+    bottom:150px;
+    &__number{
+      width: 60px;
+      height: 60px;
+      font-size: 25px;
+      line-height: 60px;
+      border-radius: 50%;
+      background-color: rgb(255,90,150);
+      box-shadow: 0 0 5px gray;
+      color: white;
+    }
+  }
   &__name{
     color: rgb(245,245,245);
     padding-top: 25px;

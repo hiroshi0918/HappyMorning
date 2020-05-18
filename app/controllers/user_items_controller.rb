@@ -1,4 +1,5 @@
 class UserItemsController < ApplicationController
+  before_action :authenticate_user!
   before_action :setup_user_item!, only: [:create, :update, :destroy]
   require 'payjp'
 
@@ -32,7 +33,7 @@ class UserItemsController < ApplicationController
 
     if @user_item.save
       respond_to do |format|
-        format.html { redirect_to current_user }
+        format.html { render("foods/index")}
         format.json
       end
     else

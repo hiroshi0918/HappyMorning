@@ -20,8 +20,12 @@
               %span
                 電話番号：
               = shop.telephone
+  = paginate @shops
   -if user_signed_in?
     = link_to "/users/#{current_user.id}/user_items",class: "move-to-cart" do
+      .move-to-cart__amount
+        .move-to-cart__amount__number
+          = @user_items_amount
       .move-to-cart__name
         cart
       %i.fas.fa-shopping-cart.fa-4x

@@ -5,12 +5,10 @@ Rails.application.routes.draw do
     :registrations => 'users/registrations', 
     :omniauth_callbacks => "omniauth_callbacks"
   } 
-  root 'shops#index'
+  root 'top_pages#index'
+  resources :top_pages, only: [:index]
   resources :shops, only: [:index] do
     resources :foods, only: [:index, :show]
-    namespace :admin do
-      resources :shops, only: [:index, :new, :create, :show,  :edit, :destroy]
-    end
   end
   
   resources :users, only: [:index,:show] do
