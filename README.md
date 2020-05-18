@@ -2,7 +2,7 @@
  
 朝食特化型フードデリバリーサービスの注文プラットフォーム
  
-# DEMO
+# デモ
 [![Image from Gyazo](https://i.gyazo.com/d6be7f290c5461b73ced87df15cd9570.gif)](https://gyazo.com/d6be7f290c5461b73ced87df15cd9570)
 
 [![Image from Gyazo](https://i.gyazo.com/12ee168af9f82f5fa8b10140289694d7.gif)](https://gyazo.com/12ee168af9f82f5fa8b10140289694d7)
@@ -30,7 +30,7 @@
 * devise認証機能
 * capistrano 自動デプロイ
  
-# Author
+# 作成者
  
 * 作成者 寺嶋 裕
 * E-mail terahiro0918@gmail.com
