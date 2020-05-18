@@ -17,11 +17,11 @@
                 .information__left
                   .information__left__image
                     = image_tag "/foods/#{o.food.image}", alt: 'ショップ', width: "100px",height: "100px"
-                  .information__left__name
-                    = o.food.name
                 .information__right
                   .information__right__shop
                     =link_to "#{o.food.shop.name}","/shops/#{o.food.shop.id}/foods"
+                  .information__right__name
+                    = o.food.name
                   .information__right__price
                     %span.price
                       = o.food.price

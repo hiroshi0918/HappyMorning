@@ -1,4 +1,4 @@
-BreadStart
+# BreadStart
  
 朝食特化型フードデリバリーサービスの注文プラットフォーム
  
@@ -19,8 +19,8 @@ BreadStart
 
 * Ruby 2.5.1
 * Rails 5.2.4.2
-* Database MySQL
-* Editor VScode
+* データベース MySQL
+* エディター VScode
 * インフラ AWS
 
 * 商品購入機能
