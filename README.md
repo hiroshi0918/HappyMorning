@@ -4,7 +4,7 @@ BreadStart
  
 # DEMO
 
-[![Image from Gyazo](https://i.gyazo.com/4975a3c466ce6c86c7c58e3a440e789b.gif)](https://gyazo.com/4975a3c466ce6c86c7c58e3a440e789b)
+![Image from Gyazo](https://i.gyazo.com/4975a3c466ce6c86c7c58e3a440e789b.gif)
 
 [![Image from Gyazo](https://i.gyazo.com/4975a3c466ce6c86c7c58e3a440e789b.gif)](https://gyazo.com/4975a3c466ce6c86c7c58e3a440e789b)
  
