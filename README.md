@@ -4,15 +4,7 @@ BreadStart
  
 # DEMO
 
-![Image from Gyazo](https://i.gyazo.com/4975a3c466ce6c86c7c58e3a440e789b.gif)
-
-[![Image from Gyazo](https://i.gyazo.com/4975a3c466ce6c86c7c58e3a440e789b.gif)](https://gyazo.com/4975a3c466ce6c86c7c58e3a440e789b)
-
-https://i.gyazo.com/4975a3c466ce6c86c7c58e3a440e789b.gif
-
-https://i.gyazo.com/4975a3c466ce6c86c7c58e3a440e789b.mp4
-
-<a href="https://gyazo.com/4975a3c466ce6c86c7c58e3a440e789b"><img src="https://i.gyazo.com/4975a3c466ce6c86c7c58e3a440e789b.gif" alt="Image from Gyazo" width="1000"/></a>
+[![Image from Gyazo](https://i.gyazo.com/12ee168af9f82f5fa8b10140289694d7.gif)](https://gyazo.com/12ee168af9f82f5fa8b10140289694d7)
  
 
  
