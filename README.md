@@ -1,6 +1,10 @@
 # BreadStart
  
 朝食特化型フードデリバリーサービスの注文プラットフォーム
+
+## テストユーザー
+メールアドレス： terahiro0918@icloud.com
+パスワード： 123456
  
 # デモ
 [![Image from Gyazo](https://i.gyazo.com/d6be7f290c5461b73ced87df15cd9570.gif)](https://gyazo.com/d6be7f290c5461b73ced87df15cd9570)
