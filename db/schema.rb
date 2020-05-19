@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2020_05_08_173454) do
 
-  create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "customer_id", null: false
     t.string "card_id", null: false
@@ -20,13 +20,13 @@ ActiveRecord::Schema.define(version: 2020_05_08_173454) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "foods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "foods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.string "name", null: false
     t.integer "price", null: false
     t.bigint "category_id"
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2020_05_08_173454) do
     t.index ["shop_id"], name: "index_foods_on_shop_id"
   end
 
-  create_table "order_items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "order_items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "food_id"
     t.integer "order_number"
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 2020_05_08_173454) do
     t.index ["user_id"], name: "index_order_items_on_user_id"
   end
 
-  create_table "shops", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "shops", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.string "name"
     t.string "address"
     t.string "telephone"
@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 2020_05_08_173454) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "user_items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "user_items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.integer "quantity"
     t.bigint "food_id"
     t.bigint "user_id"
@@ -73,7 +73,7 @@ ActiveRecord::Schema.define(version: 2020_05_08_173454) do
     t.index ["user_id"], name: "index_user_items_on_user_id"
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

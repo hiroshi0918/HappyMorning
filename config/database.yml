@@ -11,15 +11,17 @@
 #
 default: &default
   adapter: mysql2
+  charset: utf8
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
-  password:
+  password: password
   socket: /tmp/mysql.sock
+  host: db
 
 development:
   <<: *default
-  database: HappyMorning_development
+  database: docker_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
