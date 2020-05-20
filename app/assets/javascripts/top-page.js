@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('turbolinks:load',function(){
   var $interval = 5000;
   var $fade_speed = 2000;
   $("#slide ul li").css({"position":"relative","overflow":"hidden"});
