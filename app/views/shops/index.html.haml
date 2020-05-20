@@ -1,10 +1,26 @@
+.top-page
+  .top-images#slide
+    %ul
+      %li
+        = image_tag "/top/朝食トップ画像.jpg",class:"top-images__image"
+      %li
+        = image_tag "/top/朝食トップ画像２.jpg",class:"top-images__image"
+      %li
+        = image_tag "/top/朝食トップ画像３.jpg",class:"top-images__image"
+      %li
+        = image_tag "/top/パン食べ画像.jpg",class:"top-images__image"
+  .sub
+    朝食デリバリーサービス
+  .sub2
+    あなたの朝をちょっと贅沢に!
+  
 .top
   .top__title
     店舗一覧
 .wrapper.contents
   .shops.row
     - @shops.each do |shop|
-      = link_to "/shops/#{shop.id}/foods",class: "shops__list col-lg-4 col-sm-12 col-md-12" do
+      = link_to "/shops/#{shop.id}/foods",class: "shops__list col-lg-4 col-sm-10 col-md-10" do
         .shops__list__select
           .shops__list__select__image
             = image_tag "/shops/#{shop.image}", alt: 'ショップ',class: "shops__list__select__image__pic"

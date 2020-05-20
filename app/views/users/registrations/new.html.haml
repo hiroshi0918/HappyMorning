@@ -24,7 +24,7 @@
             .field
               = f.label :second_address do
                 住所(市区町村以下)
-              = f.text_field :second_address,placeholder: "例) 港区麻布十番1ー〇ー〇 マンション〇〇〇号室", autocomplete: "second_address"
+              = f.text_field :second_address,placeholder: "例) 港区麻布十番1ーoーo", autocomplete: "second_address"
         .email
           .field
             = f.label :email do
@@ -34,7 +34,7 @@
           .field
             = f.label :telephone do
               電話番号
-            = f.text_field :telephone,placeholder: "例) 080-1111ー〇〇〇〇", autocomplete: "email"
+            = f.text_field :telephone,placeholder: "例) 080-1111ー1111", autocomplete: "email"
         .password
           .field
             = f.label :password do

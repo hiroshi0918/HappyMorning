@@ -5,8 +5,7 @@ Rails.application.routes.draw do
     :registrations => 'users/registrations', 
     :omniauth_callbacks => "omniauth_callbacks"
   } 
-  root 'top_pages#index'
-  resources :top_pages, only: [:index]
+  root 'shops#index'
   resources :shops, only: [:index] do
     resources :foods, only: [:index, :show]
   end

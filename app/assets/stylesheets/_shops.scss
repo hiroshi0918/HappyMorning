@@ -15,15 +15,17 @@
 .wrapper{
   margin-top: 50px;
   .shops{
+    margin: 0 auto;
     
     &__list{
-      margin-bottom: 40px;
+      margin: 0 auto 40px;
 
       &__select{
         padding: 20px;
         background-color: rgb(245,245,245);
         border: 1px solid;
         box-shadow: 8px 8px rgba(0,0,0,0.1);
+
 
         &__image{
           &__pic{
