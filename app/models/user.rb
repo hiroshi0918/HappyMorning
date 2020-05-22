@@ -1,15 +1,19 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :confirmable, :lockable, :timeoutable,
           :omniauthable, omniauth_providers: [:twitter]
-          has_many :user_items, dependent: :destroy
-          has_many :foods, through: :user_items
-          accepts_nested_attributes_for :user_items
-          has_many :order_items
-          
+  has_many :user_items, dependent: :destroy
+  has_many :foods, through: :user_items
+  accepts_nested_attributes_for :user_items
+  has_many :order_items
+  
+  validates :last_name, presence: true
+  validates :first_name, presence: true
+  validates :first_address, presence: true
+  validates :second_address, presence: true
+  validates :telephone, presence: true
+  validates :email, presence: true,uniqueness: true
   
   def leave
     #leave_atに退会時刻を追記
