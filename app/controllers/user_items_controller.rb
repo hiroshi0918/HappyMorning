@@ -4,7 +4,7 @@ class UserItemsController < ApplicationController
   require 'payjp'
 
   def index
-    @user_items = current_user.user_items
+    @user_items = current_user.user_items.includes(:food)
     @order_item = OrderItem.new
     @amount = sum_price
 
